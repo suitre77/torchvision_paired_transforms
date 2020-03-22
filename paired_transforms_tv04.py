@@ -108,7 +108,7 @@ class ToTensor(object):
             Tensor(s): Converted image(s).
         """
         if pic2 is not None:
-            return F.to_tensor(pic), F.to_tensor(pic2).mul(255).long()[0]
+            return F.to_tensor(pic), F.to_tensor(pic2)
         return F.to_tensor(pic)
 
     def __repr__(self):
