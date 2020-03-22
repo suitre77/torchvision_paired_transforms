@@ -192,7 +192,7 @@ class Normalize(object):
             Tensor: Normalized Tensor image. Optionally second input tensor
         """
         if tensor2 is not None:
-            return F.normalize(tensor, self.mean, self.std), tensor2
+            return F.normalize(tensor, self.mean, self.std), F.normalize(tensor2, self.mean, self.std)
         return F.normalize(tensor, self.mean, self.std)
 
     def __repr__(self):
